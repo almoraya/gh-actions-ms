@@ -1,2 +1,2 @@
 # gh-actions-ms
-GitHub Actions - Workshop
+GitHub Actions - Another Complete Guide
