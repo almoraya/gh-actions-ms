@@ -1,2 +1,2 @@
 # gh-actions-ms
-GitHub Actions - The Complete Guide
+GitHub Actions - Another Tutorial
