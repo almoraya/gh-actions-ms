@@ -1,0 +1,17 @@
+name: 05 - 2 - Event Filters and Activity Types
+on: 
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show specific PR event
+        run: |
+          if [ "${{ github.event.action }}" == "closed" ]; then
+            echo "Running because a PR was closed against main!"
+          fi
