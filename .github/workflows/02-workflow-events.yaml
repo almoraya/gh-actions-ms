@@ -1,11 +1,5 @@
 name: 02 - Workflow Events
 on:
-  push:
-  pull_request: 
-  schedule:
-    # 10:13 German time (CEST/CET). Converted to UTC (CEST = UTC+2) => 08:13 UTC.
-    # Runs today (8 Aug) at 10:13 Germany time (converted to UTC). Note: cron lacks year, so this will run every year on Aug 8.
-    - cron: '15 8 8 8 *'
   workflow_dispatch:
 
 jobs:
