@@ -14,8 +14,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Show OS
-        shell: bash
-        run: echo "This is running on a $RUNNER_OS runner"
+        run: echo "This is running on a ${{ runner.os }} runner"
 
   mac-echo:
     runs-on: macos-latest
