@@ -11,5 +11,21 @@ jobs:
 
       - name: Printing Folders
         run: |
-          tree -L 2
-          
+          echo "Current directory: $(pwd)"
+          echo "React app contents:"
+          ls -la 04-using-actions/react-app
+          echo "Workflows contents:"
+          ls -la .github/workflows/ || echo "Workflows folder not found"
+      
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '26'
+
+      - name: Install Dependencies
+        working-directory: 04-using-actions/react-app
+        run: npm ci
+
+      - name: Run Unit Tests
+        working-directory: 04-using-actions/react-app
+        run: npm run test
