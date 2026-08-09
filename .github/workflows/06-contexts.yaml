@@ -10,9 +10,18 @@ on:
         type: boolean
         default: false
 
+env:
+  MY_WORKFLOW_VAR: 'workflow'
+  MY_OVERWRITTEN_VAR: 'workflow'
+  MY_GLOBAL_VAR: 'global'
+
+
 jobs:
   echo-data:
     runs-on: ubuntu-latest
+    env:
+      MY_JOB_VAR: 'job'
+      MY_OVERWRITTEN_VAR: 'job'
     steps:
       - name: Display Information
         run: |
@@ -27,3 +36,29 @@ jobs:
       - name: Retrieve Variable
         run: |
           echo "Value of MY_VAR: ${{ vars.MY_VAR }}"
+
+      - name: Print with defined environment variables at step level
+        env:
+          MY_STEP_VAR: 'step'
+          MY_OVERWRITTEN_VAR: 'step'
+        run: |
+          echo "Printing Environment Variables defined at step level:"
+          echo "MY_WORKFLOW_VAR: ${{ env.MY_WORKFLOW_VAR }}"
+          echo "MY_JOB_VAR: ${{ env.MY_JOB_VAR }}"
+          echo "MY_STEP_VAR: ${{ env.MY_STEP_VAR }}"
+          echo "MY_OVERWRITTEN_VAR: ${{ env.MY_OVERWRITTEN_VAR }}"
+    
+      - name: Print without defined environment variables at step level
+        run: |
+          echo "Printing Environment Variables not defined at step level:"
+          echo "MY_WORKFLOW_VAR: ${{ env.MY_WORKFLOW_VAR }}"
+          echo "MY_OVERWRITTEN_VAR: ${{ env.MY_OVERWRITTEN_VAR }}"
+
+  echo-data-2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print more variables
+        run: |
+          echo "MY_WORKFLOW_VAR: ${{ env.MY_WORKFLOW_VAR }}"
+          echo "MY_OVERWRITTEN_VAR: ${{ env.MY_OVERWRITTEN_VAR }}"
+          echo "MY_GLOBAL_VAR: ${{ env.MY_GLOBAL_VAR }}"
