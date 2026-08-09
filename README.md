@@ -3,4 +3,4 @@ GitHub Actions - Another great Tutorial
 
 Modifying the README to create a PR.
 
-Adding a random line for testing
+Adding a random line for testing.
