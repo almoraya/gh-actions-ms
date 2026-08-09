@@ -38,6 +38,7 @@ jobs:
       - name: Print Environment Variables
         run: |
           echo "Repo var: ${{ vars.REPOSITORY_VAR }}"
+          echo "Org overwritten var: ${{ vars.OVERWRITTEN_VAR }}"
 
   echo-prod:
     runs-on: ubuntu-latest
