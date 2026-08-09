@@ -2,3 +2,5 @@
 GitHub Actions - Another great Tutorial
 
 Modifying the README to create a PR.
+
+Adding a new line.
