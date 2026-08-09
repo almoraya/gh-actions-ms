@@ -1,7 +1,6 @@
 name: 08 - Using Variables
 
 on:
-  - push
   - workflow_dispatch
 
 env:
@@ -58,7 +57,7 @@ jobs:
     steps:
       - name: Print Staging Environment Variables
         run: |
-          echo "Org overwritten with default value: ${{ vars.OVERWRITTEN_VAR || 'staging defaultvalue' }}"
+          echo "Org overwritten with default value: ${{ vars.OVERWRITTEN_VAR || 'staging default value' }}"
           echo "Repo var: ${{ vars.REPOSITORY_VAR }}"
           echo "Environment var: ${{ vars.TARGET_VAR }}"
   
