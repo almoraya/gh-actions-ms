@@ -16,9 +16,7 @@ jobs:
       - name: Print PR labels
         shell: bash
         run: |
-          cat <<'EOF' | jq .
-          ${{ toJSON(github.event.pull_request.labels) }}
-          EOF
+          echo '${{ toJSON(github.event.pull_request.labels) }}' | jq .
 
       - name: Bug step
         if: ${{ failure() && !cancelled() && contains(github.event.pull_request.title, 'fix') }}
