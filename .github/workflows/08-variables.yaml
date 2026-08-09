@@ -58,7 +58,7 @@ jobs:
     steps:
       - name: Print Staging Environment Variables
         run: |
-          echo "Org overwritten var: ${{ vars.OVERWRITTEN_VAR || 'staging value' }}"
+          echo "Org overwritten with default value: ${{ vars.OVERWRITTEN_VAR || 'staging defaultvalue' }}"
           echo "Repo var: ${{ vars.REPOSITORY_VAR }}"
           echo "Environment var: ${{ vars.TARGET_VAR }}"
   
