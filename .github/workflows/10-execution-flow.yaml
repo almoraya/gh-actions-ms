@@ -22,6 +22,7 @@ jobs:
       - name: Running Unit Tests
         run: |
           echo "Running unit tests..."
+          echo "The pass-unit-tests input was set to: ${{ inputs.pass-unit-tests }}."
       
       - name: Failing tests
         if: ${{ !inputs.pass-unit-tests }}
